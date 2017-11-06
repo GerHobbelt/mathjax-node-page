@@ -22,7 +22,8 @@ const jsdom = require('jsdom').jsdom;
 
 const argv = require("yargs")
     .strict()
-    .usage("Usage: mjpage [options] < input.html > output.html", {
+    .usage("Usage: mjpage [options] < input.html > output.html")
+    .options({
         speech: {
             boolean: true,
             default: true,
@@ -85,10 +86,12 @@ const argv = require("yargs")
             describe: "the URL to use for web fonts"
         }
     })
+    .help()
     .argv;
 
 if (argv.font === "STIX") argv.font = "STIX-Web";
 argv.format = argv.format.split(/ *, */);
+
 const mjglobal = {
     extensions: argv.extensions,
     fontURL: argv.fontURL,
