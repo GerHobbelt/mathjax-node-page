@@ -12,5 +12,5 @@ mjpage('\\$x\\$', {
 }, {
     html: true
 }, 
-output => t.ok(output.indexOf('<span>$</span>x<span>$</span>') > -1), '\\$ escaped')
+output => t.ok(output.indexOf('<span>$</span>x<span>$</span>') > -1), '\\$ escaped');
 });
